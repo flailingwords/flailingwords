@@ -3,14 +3,19 @@ name: ci
 on:
     push:
         branches:
-            - 'main'
+            - "main"
         tags:
-            - 'v*'
+            - "v*"
     pull_request:
         branches:
-            - 'main'
+            - "main"
     workflow_dispatch:
 
+permissions:
+    contents: read
+    packages: write
+    attestations: write
+    id-token: write
 
 jobs:
     build:
@@ -26,14 +31,14 @@ jobs:
             - name: Build and push
               uses: docker/build-push-action@v6
               with:
-                tags: ghcr.io/flailingwords/flailingwords:latest
-                outputs: type=docker,dest=${{ runner.temp }}/flailingwords-build.tar
+                  tags: ghcr.io/flailingwords/flailingwords:latest
+                  outputs: type=docker,dest=${{ runner.temp }}/flailingwords-build.tar
 
             - name: Upload artifact
               uses: actions/upload-artifact@v4
               with:
-                name: flailingwords-build
-                path: ${{ runner.temp }}/flailingwords-build.tar
+                  name: flailingwords-build
+                  path: ${{ runner.temp }}/flailingwords-build.tar
 
     push:
         runs-on: ubuntu-latest
@@ -47,8 +52,8 @@ jobs:
             - name: Download artifact
               uses: actions/download-artifact@v4
               with:
-                    name: flailingwords-build
-                    path: ${{ runner.temp }}
+                  name: flailingwords-build
+                  path: ${{ runner.temp }}
 
             - name: Load image
               run: docker load --input ${{ runner.temp }}/flailingwords-build.tar
