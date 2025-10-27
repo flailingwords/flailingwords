@@ -1,78 +1,80 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <script type="module">
-      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs'
-      mermaid.initialize({ startOnLoad: true, theme: 'default' })
-    </script>
-    <style type="text/css">
-      BODY {
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-position: center;
-        background-image: url('assets/images/greg-rakozy-0LU4vO5iFpM-unsplash-0.jpg');
-      }
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Flailing Words</title>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+        <script type="module">
+            import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+            mermaid.initialize({ startOnLoad: true, theme: "default" });
+        </script>
+        <style type="text/css">
+            BODY {
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-position: center;
+                background-image: url("assets/images/greg-rakozy-0LU4vO5iFpM-unsplash-0.jpg");
+            }
 
-      @media (width >= 1920px) {
-        BODY {
-          background-image: url('assets/images/greg-rakozy-0LU4vO5iFpM-unsplash-1.jpg');
-        }
-      }
+            @media (width >= 1920px) {
+                BODY {
+                    background-image: url("assets/images/greg-rakozy-0LU4vO5iFpM-unsplash-1.jpg");
+                }
+            }
 
-      @media (width >= 2400px) {
-        BODY {
-          background-image: url('assets/images/greg-rakozy-0LU4vO5iFpM-unsplash-2.jpg');
-        }
-      }
+            @media (width >= 2400px) {
+                BODY {
+                    background-image: url("assets/images/greg-rakozy-0LU4vO5iFpM-unsplash-2.jpg");
+                }
+            }
 
-      @media (width >= 5615px) {
-        BODY {
-          background-image: url('assets/images/greg-rakozy-0LU4vO5iFpM-unsplash-3.jpg');
-        }
-      }
-    </style>
-    <style type="text/tailwindcss">
-      @layer components {
-        .nodeLabel > p {
-          @apply text-white;
-        }
+            @media (width >= 5615px) {
+                BODY {
+                    background-image: url("assets/images/greg-rakozy-0LU4vO5iFpM-unsplash-3.jpg");
+                }
+            }
+        </style>
+        <style type="text/tailwindcss">
+            @layer components {
+                .nodeLabel > p {
+                    @apply text-white;
+                }
 
-        .nodeLabel > p > a {
-          @apply underline underline-offset-2;
-        }
+                .nodeLabel > p > a {
+                    @apply underline underline-offset-2;
+                }
 
-        .node.mindmap-node.section--1 > path.basic.label-container {
-          @apply fill-blue-600!;
-        }
+                .node.mindmap-node.section--1 > path.basic.label-container {
+                    @apply fill-blue-600!;
+                }
 
-        .node.mindmap-node:not(.section--1) > path.basic.label-container {
-          @apply text-white!;
-        }
+                .node.mindmap-node:not(.section--1)
+                    > path.basic.label-container {
+                    @apply text-white!;
+                }
 
-        .node.mindmap-node.section-0 > path.basic.label-container {
-          @apply fill-amber-600!;
-        }
+                .node.mindmap-node.section-0 > path.basic.label-container {
+                    @apply fill-amber-600!;
+                }
 
-        .node.mindmap-node.section-1 > path.basic.label-container {
-          @apply fill-green-600!;
-        }
+                .node.mindmap-node.section-1 > path.basic.label-container {
+                    @apply fill-green-600!;
+                }
 
-        .node.mindmap-node.section-2 > path.basic.label-container {
-          @apply fill-red-600!;
-        }
-      }
-    </style>
-  </head>
+                .node.mindmap-node.section-2 > path.basic.label-container {
+                    @apply fill-red-600!;
+                }
+            }
+        </style>
+    </head>
 
-  <body>
-    <div class="absolute top-0 bottom-0 left-0 right-0 w-full w-full">
-      <pre
-        class="mermaid text-bold h-full w-full *:relative *:top-[50%] *:left-[50%] *:translate-x-[-50%] *:translate-y-[-50%]"
-      >
+    <body>
+        <div class="absolute top-0 bottom-0 left-0 right-0 w-full w-full">
+            <pre
+                class="mermaid text-bold h-full w-full *:relative *:top-[50%] *:left-[50%] *:translate-x-[-50%] *:translate-y-[-50%]"
+            >
             mindmap
                 root)Flailing Words(
                     future-projects)Future Projects(
@@ -82,6 +84,6 @@
                     github)<a href='https://github.com/flailingwords'>GitHub</a>(
                     serenity)<a href='https://serenity.flailingwords.com'>Serenity</a>(
           </pre>
-    </div>
-  </body>
+        </div>
+    </body>
 </html>
