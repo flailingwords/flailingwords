@@ -1,3 +1,3 @@
-FROM nginx:1-alpine3
+FROM nginx:1-alpine
 
 COPY content/ /usr/share/nginx/html/
